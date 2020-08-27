@@ -1,0 +1,8 @@
+.DS_Store
+**/.DS_Store
+nbproject/**
+*.dge
+*.opk
+*.o
+opk/*.dge
+dist/**

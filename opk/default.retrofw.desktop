@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=MineSweeper
+Comment=A mine clearing puzzle game
+Exec=minesweeper.dge
+Terminal=false
+Type=Application
+StartupNotify=false
+Icon=MineSweeper
+Categories=games;
