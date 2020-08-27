@@ -9,19 +9,12 @@ typedef struct {
 	unsigned long status;
 } KEY_STATUS;
 
-//extern void _kbd_get_status(KEY_STATUS* ks);
-//
 KEY_STATUS _control_status[2];
 timer*     _control_timer = NULL;
 uint32_t   _control_lock = 0;
 
 void control_init() {
-//	_kbd_get_status(_control_status);
-//	_control_status[1] = _control_status[0];
-//	_control_lock = 0;
-//	_control_timer = timer_create();
-    
-    
+    // No-op 
 }
 
 void control_term() {

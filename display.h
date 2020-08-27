@@ -11,5 +11,6 @@ void display_init();
 void* display_addr();
 void  display_clear(uint8_t inRed, uint8_t inGreen, uint8_t inBlue);
 void  display_flip();
+void display_release();
 
 #endif

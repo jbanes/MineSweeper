@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <time.h>
 #include <unistd.h>
 
 #include "graphics.h"
@@ -425,8 +426,8 @@ int main(int argc, char** argv) {
 	gamePathInit(argv[0]);
 	int ref = EXIT_SUCCESS;
 
-	//srand(GetTickCount());
-	srand(0x12345678);
+	srand(time(NULL));
+        
         SDL_Init(SDL_INIT_VIDEO);
         SDL_WM_SetCaption("MineSweeper", "MineSweeper");
 
@@ -471,10 +472,10 @@ int main(int argc, char** argv) {
 
             if(control_check(CONTROL_BUTTON_START).pressed && control_check(CONTROL_BUTTON_START).changed)
                     gameRunning = false;
-            if(control_check(CONTROL_BUTTON_SELECT).pressed && control_check(CONTROL_BUTTON_SELECT).changed) {
-                    gameScreenshot();
-                    gameDialog("Screenshot taken.");
-            }
+//            if(control_check(CONTROL_BUTTON_SELECT).pressed && control_check(CONTROL_BUTTON_SELECT).changed) {
+//                    gameScreenshot();
+//                    gameDialog("Screenshot taken.");
+//            }
 
             int tempCondition = gridCondition();
             if(tempCondition < 0) {
@@ -490,8 +491,8 @@ int main(int argc, char** argv) {
 	free(fontDefault);
 	gfx_term();
 	control_term();
+        display_release();
         
-        // SDL_Free(surface)
         SDL_Quit();
 
 	return 0;

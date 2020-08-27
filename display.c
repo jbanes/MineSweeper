@@ -33,3 +33,7 @@ void display_clear(uint8_t inRed, uint8_t inGreen, uint8_t inBlue) {
 void display_flip() {
     SDL_Flip(screen);
 }
+
+void display_release() {
+    SDL_FreeSurface(screen);
+}
